@@ -14,6 +14,7 @@
 		038A0AF3248D91500018750D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 038A0AF2248D91500018750D /* Assets.xcassets */; };
 		038A0AF6248D91500018750D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038A0AF4248D91500018750D /* LaunchScreen.storyboard */; };
 		038A0B01248D91500018750D /* AzureTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038A0B00248D91500018750D /* AzureTestAppTests.swift */; };
+		038A0B0C248D925B0018750D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038A0B0B248D925B0018750D /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		038A0AFC248D91500018750D /* AzureTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AzureTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		038A0B00248D91500018750D /* AzureTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureTestAppTests.swift; sourceTree = "<group>"; };
 		038A0B02248D91500018750D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		038A0B0B248D925B0018750D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				038A0AE9248D914E0018750D /* AppDelegate.swift */,
 				038A0AEB248D914E0018750D /* SceneDelegate.swift */,
 				038A0AED248D914E0018750D /* ViewController.swift */,
+				038A0B0B248D925B0018750D /* API.swift */,
 				038A0AEF248D914E0018750D /* Main.storyboard */,
 				038A0AF2248D91500018750D /* Assets.xcassets */,
 				038A0AF4248D91500018750D /* LaunchScreen.storyboard */,
@@ -202,6 +205,7 @@
 			files = (
 				038A0AEE248D914E0018750D /* ViewController.swift in Sources */,
 				038A0AEA248D914E0018750D /* AppDelegate.swift in Sources */,
+				038A0B0C248D925B0018750D /* API.swift in Sources */,
 				038A0AEC248D914E0018750D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

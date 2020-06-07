@@ -19,9 +19,25 @@ class AzureTestAppTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPing() throws {
+        let expectation = XCTestExpectation(description: "ping test")
+        class FakeDelegate: BaseDelegate<TheResponse> {
+            var _didLoad: ((TheResponse) -> Void)?
+            override func didLoad(data: TheResponse) {
+                self._didLoad?(data)
+            }
+        }
+        let delegate = FakeDelegate()
+        delegate._didLoad = { data in
+            XCTAssertNotNil(data)
+            XCTAssertEqual(data.name, "hello")
+            expectation.fulfill()
+        }
+        let loader = APILoader()
+        loader.delegate = delegate
+        loader.load()
+        
+        wait(for: [expectation], timeout: 10)
     }
 
     func testPerformanceExample() throws {

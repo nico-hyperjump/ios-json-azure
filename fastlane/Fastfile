@@ -1,0 +1,39 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+pid = 0
+platform :ios do
+  desc "Description of what the lane does"
+  lane :thetest do
+    # add actions here: https://docs.fastlane.tools/actions
+    pid = spawn('../node_modules/.bin/json-server ../server/db.json')
+    Process.detach(pid)
+    run_tests(scheme: "AzureTestApp", 
+              device: "iPhone SE (2nd generation)",
+              xcargs: '-UseModernBuildSystem=NO'
+              ) 
+  end
+  after_all do |lane, options|
+    # kill the json-server
+    sh "kill -9 #{pid}"
+  end
+
+  error do |lane, exception, options|
+    # kill the json-server
+    sh "kill -9 #{pid}"
+  end
+end
