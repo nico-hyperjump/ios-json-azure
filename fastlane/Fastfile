@@ -23,7 +23,7 @@ platform :ios do
     pid = spawn('../node_modules/.bin/json-server ../server/db.json')
     Process.detach(pid)
     run_tests(scheme: "AzureTestApp", 
-              device: "iPhone 11",
+              device: "76D68C1E-8EB7-4C91-8BB3-507326D6A3CB",
               xcargs: '-UseModernBuildSystem=NO'
               ) 
   end
