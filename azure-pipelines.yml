@@ -13,5 +13,7 @@ jobs:
         displayName: "Install bundler"
       - script: bundle install
         displayName: "Install gems"
+      - script: xcrun simctl list
+        displayName: List simulators
       - script: bundle exec fastlane thetest
         displayName: "Test"
